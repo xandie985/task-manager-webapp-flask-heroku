@@ -7,6 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' #3 forward slashes f
 db = SQLAlchemy(app) #initializing the database
 
 class Todo(db.Model):
+    #define the databse structure
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
